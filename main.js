@@ -6,7 +6,28 @@ var idCardContenedor = document.getElementById("idCard-container");
 
 pokemonButton.addEventListener('click', async e => {
 
-  await renderCard();
+  if (pokemonInput.value >= 1 && pokemonInput.value <= 1025) {
+    await renderCard();
+
+  } else {
+
+    idCardContenedor.className = "card-container";
+    const cardHTML =`
+
+      <div class="card-img">
+        <img src="/assets/img/quien_es_ese_pokemon.jpg" alt="quien-es-ese-pokemon">
+      </div> 
+    
+      <div class="card-info">
+        <h2>¿¡Quien es ese pokemon!?</h2>
+      </div> 
+  `;
+
+    idCardContenedor.innerHTML=cardHTML;
+
+    throw `No existe el pokemon con el id = ${pokemonInput.value}`;
+  }
+  
 });
 
 const renderCard = async() => {

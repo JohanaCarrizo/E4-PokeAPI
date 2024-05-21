@@ -155,6 +155,19 @@ small{
   box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+.pokemonNotFound{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: center;
+}
+
+.pokemonNotFound img{
+  max-width: 150px;
+  border-radius: 50%;
+}
+
 
 @media screen and (min-width: 300px){
   .container{
